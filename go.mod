@@ -1,4 +1,4 @@
-module github.com/lokrr/auth-service
+module github.com/abhayishere/lokrr-auth-service
 
 go 1.22.4
 

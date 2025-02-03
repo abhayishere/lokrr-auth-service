@@ -6,8 +6,8 @@ import (
 	"log"
 	"net"
 
+	proto "github.com/abhayishere/lokrr-auth-service/proto/authService"
 	"github.com/google/uuid"
-	proto "github.com/lokrr/auth-service/proto/authService"
 	"google.golang.org/grpc"
 )
 
