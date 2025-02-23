@@ -33,6 +33,13 @@ func (s *server) Login(ctx context.Context, req *proto.LoginRequest) (*proto.Log
 	}, nil
 }
 
+func (s *server) ValidateToken(ctx context.Context, req *proto.ValidateTokenRequest) (*proto.ValidateTokenResponse, error) {
+	fmt.Println("Token Validated:", req.Token)
+	return &proto.ValidateTokenResponse{
+		Authorized: "true",
+	}, nil
+}
+
 func main() {
 	listener, err := net.Listen("tcp", ":50052")
 	if err != nil {

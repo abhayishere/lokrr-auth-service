@@ -20,6 +20,12 @@ service AuthService {
       body: "*"         // Maps the entire request body to the RPC input
     };
   }
+  rpc ValidateToken (ValidateTokenRequest) returns (ValidateTokenResponse){
+    option (google.api.http) = {
+      post: "/v1/validate-token" // Defines the REST POST endpoint
+      body: "*"         // Maps the entire request body to the RPC input
+    };
+  }
 }
 
 message RegisterRequest {
@@ -41,4 +47,12 @@ message LoginRequest {
 message LoginResponse {
   string user_id = 1;
   string token = 2;
+}
+
+message ValidateTokenRequest {
+  string token=1;
+}
+
+message ValidateTokenResponse {
+  string authorized=1;
 }
